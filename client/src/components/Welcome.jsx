@@ -75,9 +75,15 @@ const Welcome = () => {
 
                 <p className="text-white font-semibold text-lg mt-1">Ethereum</p>
               </div>
-
             </div>
           </div>
+
+
+        <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+          {/* CONTINUE FROM HERE */}
+          {/* https://youtu.be/Wn_Kb3MR_cU?t=3188 */}
+        </div>
+
         </div>
 
       </div>
