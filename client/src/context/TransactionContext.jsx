@@ -28,6 +28,10 @@ export const TransactionProvider = ({children}) => {
     console.log(accounts);
   }
 
+  const connectWallet = async () => {
+    // https://youtu.be/Wn_Kb3MR_cU?t=6277
+  }
+
   useEffect(() => {
     checkIfWalletisConnected();
   }, [])
