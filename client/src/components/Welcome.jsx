@@ -25,7 +25,9 @@ const Input = ({ placeholder, name, type, value, handleChange }) => {
 const Welcome = () => {
   const { connectWallet, currentAccount, formData, sendTransaction, handleChange } = useContext(TransactionContext);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+
+    //https://youtu.be/Wn_Kb3MR_cU?t=7100
     const {addressTo, amount, keyword, message} = formData;
     e.preventDefalt();
 
