@@ -21,6 +21,11 @@ const getEthereumContract = () => {
 
 export const TransactionProvider = ({ children }) => {
   const [currentedAccount, setCurrentAccount] = useState('')
+  const [formData, setFormData] = useState({addressTo: '', amount: '', keyword: '', message: ''});
+
+  const handleChange = (e, name) => {
+    setFormData ((prevState) => ({ ...prevState, [name]: e.targe.value }));
+  }
 
   const checkIfWalletisConnected = async () => {
     try {
@@ -77,7 +82,7 @@ export const TransactionProvider = ({ children }) => {
   }, [])
 
   return (
-    <TransactionContext.Provider value={{ connectWallet, currentAccount }}>
+    <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange }}>
       {children}
     </TransactionContext.Provider>
   );
