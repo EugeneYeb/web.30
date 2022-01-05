@@ -23,7 +23,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => {
   )
 };
 const Welcome = () => {
-  const { connectWallet, currentAccount, formData, setFormData, handleChange } = useContext(TransactionContext);
+  const { connectWallet, currentAccount, formData, sendTransaction, handleChange } = useContext(TransactionContext);
 
   const handleSubmit = () => {
     const {addressTo, amount, keyword, message} = formData;

@@ -20,7 +20,7 @@ const getEthereumContract = () => {
 }
 
 export const TransactionProvider = ({ children }) => {
-  const [currentedAccount, setCurrentAccount] = useState('')
+  const [currentAccount, setCurrentAccount] = useState('')
   const [formData, setFormData] = useState({addressTo: '', amount: '', keyword: '', message: ''});
 
   const handleChange = (e, name) => {
@@ -66,8 +66,8 @@ export const TransactionProvider = ({ children }) => {
     try {
 
       if (!ethereum) return alert("Please install metamask");
-
-      //get the data from the form...
+      const {addressTo, amount, keyword, message} = formData;
+      getEthereumContract();
       
     } catch (error) {
       
@@ -82,7 +82,7 @@ export const TransactionProvider = ({ children }) => {
   }, [])
 
   return (
-    <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange }}>
+    <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction }}>
       {children}
     </TransactionContext.Provider>
   );
