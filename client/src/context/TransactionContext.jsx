@@ -57,6 +57,21 @@ export const TransactionProvider = ({ children }) => {
     }
   }
 
+  const sendTransaction = async () => {
+    try {
+
+      if (!ethereum) return alert("Please install metamask");
+
+      //get the data from the form...
+      
+    } catch (error) {
+      
+
+      console.log(error);
+      throw new Error("No ethereum object.")
+    }
+  }
+
   useEffect(() => {
     checkIfWalletisConnected();
   }, [])
