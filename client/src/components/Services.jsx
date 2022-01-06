@@ -1,25 +1,23 @@
-import { BsInfoCircle } from "react-icons/bs";
+import { BsShieldFillCheck } from 'react-icons/bs';
+import { BiSearchAlt } from 'react-icons/bi';
+import { RiHeath2Fill } from 'react-icons/ri';
+
+const ServiceCard = ({ color, title, icon, subtitle }) => {
+
+  <div className="flex flex-row justify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
+    <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
+      {icon}
+    </div>
+
+    <div className="ml-5 flex flex-col flex-1">
+      <h3 className='mt-2 text-white text-lg'>{title}</h3>
+      <p className='mt-2 text-white text-sm md:w-9/12'>{subtitle}</p>
+    </div>
+  </div>
+}
 
 const Services = () => {
 
-  import { BsShieldFillCheck } from 'react-icons/bs';
-  import { BiSearchAlt } from 'react-icons/bi';
-  import { RiHeath2Fill } from 'react-icons/ri';
-
-  const ServiceCard = ({ color, title, icon, subtitle }) => {
-
-    <div className="flex flex-row justify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
-      <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
-        {icon}
-      </div>
-
-      <div className="ml-5 flex flex-col flex-1">
-        <h3 className='mt-2 text-white text-lg'>{title}</h3>
-        <p className='mt-2 text-white text-sm md:w-9/12'>{subtitle}</p>
-      </div>
-
-    </div>
-  }
   return (
 
     <div className="flex flex-col md:flex-row w-full justify-center items-center gradient-bg-services">
@@ -35,13 +33,13 @@ const Services = () => {
         <ServiceCard
           color="bg-[#2952e3]"
           title="Security Guaranteed"
-          icon={<BsInfoCircle fontSize={21} className="text-white" />}
+          icon={<BsShieldFillCheck fontSize={21} className="text-white" />}
           subtitle="Security is guarantted. We always maintain prvacy and the quality of our product."
         />
         <ServiceCard
           color="bg-[#8945F8]"
           title="Best exchange rates"
-          icon={<BsSearchAlt fontSize={21} className="text-white" />}
+          icon={<BiSearchAlt fontSize={21} className="text-white" />}
           subtitle="Security is guarantted. We always maintain prvacy and the quality of our product."
         />
         <ServiceCard
@@ -51,7 +49,6 @@ const Services = () => {
           subtitle="Security is guarantted. We always maintain prvacy and the quality of our product."
         />
       </div>
-
     </div>
 
   );
