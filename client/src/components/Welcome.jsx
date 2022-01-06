@@ -27,7 +27,6 @@ const Welcome = () => {
 
   const handleSubmit = (e) => {
 
-    //https://youtu.be/Wn_Kb3MR_cU?t=7100
     const {addressTo, amount, keyword, message} = formData;
     e.preventDefalt();
 

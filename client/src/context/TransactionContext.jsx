@@ -17,14 +17,16 @@ const getEthereumContract = () => {
     signer,
     transactionContract
   });
+
+  return transactionContract;
 }
 
 export const TransactionProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('')
-  const [formData, setFormData] = useState({addressTo: '', amount: '', keyword: '', message: ''});
+  const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: '' });
 
   const handleChange = (e, name) => {
-    setFormData ((prevState) => ({ ...prevState, [name]: e.targe.value }));
+    setFormData((prevState) => ({ ...prevState, [name]: e.targe.value }));
   }
 
   const checkIfWalletisConnected = async () => {
@@ -64,14 +66,21 @@ export const TransactionProvider = ({ children }) => {
 
   const sendTransaction = async () => {
     try {
-
       if (!ethereum) return alert("Please install metamask");
-      const {addressTo, amount, keyword, message} = formData;
-      getEthereumContract();
-      
-    } catch (error) {
-      
+      const { addressTo, amount, keyword, message } = formData;
+      const getEthereumContract = getEthereumContract();
+      const parsedAmount = ethers.utils.parseEther(amount);
 
+      await ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [{
+          from: currentAccount,
+          to: addressTo,
+          gas: '0x5208', //21000 GWEI,
+          value: parsedAmount._hex,
+        }]
+      })
+    } catch (error) {
       console.log(error);
       throw new Error("No ethereum object.")
     }
