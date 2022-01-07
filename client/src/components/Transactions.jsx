@@ -33,6 +33,9 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
 
               <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
                 <p className="text-[#37c7da] font-bold">{timestamp}</p>
+
+                {/* https://youtu.be/Wn_Kb3MR_cU?t=9505 - CURRENT PROGRESS */}
+
               </div>
 
         </div>
@@ -44,7 +47,6 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
 const Transactions = () => {
   const { currentAccount } = useContext(TransactionContext);
   return (
-    // https://youtu.be/Wn_Kb3MR_cU?t=8521
     <div className="flex width-full justify-center items-center 2xl:px-20 gradient-bg-transactions">
       <div className="flex flex-col md:p-12 py-12 px-4">
         {currentAccount ? (
