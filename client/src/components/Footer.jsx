@@ -20,6 +20,14 @@ const Footer = () => {
         <p className="text-white text-sm text-center">Come Join Us</p>
         <p className="text-white text-sm text-center">info@YeboahDigital.com</p>
       </div>
+
+      <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5"/>
+
+      <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
+      <p className="text-white text-sm text-center">@YeboahDigital 2022</p>
+      <p className="text-white text-sm text-center">All Rights Reserved</p>
+
+      </div>
     </div>
   );
 }
